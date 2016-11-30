@@ -69,6 +69,67 @@ Git用<<<<<<<，=======，>>>>>>>标记出不同分支的内容
 
 
 
+分支管理策略
+
+通常，合并分支时，如果可能，Git会使用Fast forward 模式，但这种模式下，删除分支后，会丢掉分支信息。
+如果强制禁止使用 Fast forward 模式，Git就会在merge时生成一个新的commit，这样，从分支历史上就可以看出分支信息。
+
+命令(--no-ff):
+git merge --no-ff -m 'other msg' dev
+
+
+
+Bug分支
+每个Bug都可以通过一个新的临时分支来修复，修复后合并分支，然后删除临时分支
+假设，当前正在分支上工作到一半，然而收到一个BUG需要紧急修复,怎么办？
+Git提供了一个 stash 功能,可以把当前工作现场 "储藏" 起来，等以后恢复现场后继续工作:
+$ git stash
+
+
+修改完Bug后，回到工作的分支，用git stash list命令查看：
+$ git stash list
+
+需要恢复工作现场,有两种办法：
+1.恢复工作现场不删除stash内容
+$ git stash apply
+
+2.恢复工作现场并删除stash内容
+$ git stash pop
+
+多个stash后恢复指定工作现场
+$ git stash apply stash@{0}
+
+
+
+
+
+Feature分支
+新功能添加时，为不把主分支搞乱，所以，每添加一个新功能，最好新建一个featrue分支，在featrue分支完成，合并，提交，切换到主分支，准备合并前，但是，新功能取消，需要销毁feature分支
+$ git branch -d featrue分支
+
+但是销毁失败，因为featrue分支没有被合并,怎么办？可以强制删除分支：
+$ git branch -D deatrue分支
+
+
+
+
+
+
+
+
+多人协作
+查看远程信息
+$ git remote
+
+查看远程详细信息
+$ git remote -v
+
+推送分支，就是把该分支的所有本地提交推送到远程库上。推送时，要指定本地分支，这样Git就会把该分支推送到远程库对应的远程分支上:
+$ git push origin master
+
+要推送其他分支，比如 dev 分支，就写成：
+$ git push origin dev
+
 
 
 
