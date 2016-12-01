@@ -164,7 +164,7 @@ https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif
 |---|----|-----
 |1|`[我的博客](http://www.cnblogs.com/abc1069/ "悬停显示")`|[我的博客](http://www.cnblogs.com/abc1069/ "悬停显示")
 |2|`[我的知乎][zhihu] `|[我的知乎][zhihu] 
-|2|[zhihu]:https://www.zhihu.com/people/ "我的知乎，欢迎关注"|
+|2|`[zhihu]:https://www.zhihu.com/people/ "我的知乎，欢迎关注"`|
 
 语法2由两部分组成：  
 - 第一部分使用两个中括号，[ ]里的标识符（本例中zhihu），可以是数字，字母等的组合，标识符上下对应就行了（**姑且称之为URL标识符**）  
@@ -185,9 +185,9 @@ https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif
 
 |#|语法|效果|
 |---|----|:---:
-|1|`[![weibo-logo]](http://weibo.com/)`|[![weibo-logo]](http://weibo.com/)
-|2|`[![](./img/logo.6837e927.png "我的知乎")][zhihu]`|[![](./img/logo.6837e927.png "我的知乎")][zhihu]|
-|3|`[![csdn-logo]][csdn]`|[![csdn-logo]][csdn]
+|1|`[![weibo-logo]](http://weibo.com/3310352530/profile?is_all=1)`|[![weibo-logo]](http://weibo.com/3310352530/profile?is_all=1)
+|2|`[![](./img/logo6837e927.png "我的知乎")][zhihu]`|[![](./img/logo6837e927.png "我的知乎")][zhihu]
+|3|`[![csdn-logo]][http://www.csdn.net/]`|[![csdn-logo]][http://www.csdn.net/]
 
 因为图片本身和链接本身都支持URL标识符的形式，所以图片链接也可以很简洁（见例3）。  
 注意，此时鼠标悬停时显示的文字是图片的title，而非链接本身的title了。
@@ -338,3 +338,6 @@ Github的Markdown语法支持添加emoji表情，输入不同的符号码（两�
 但是这个网页每次都打开**奇慢**。。所以我整理到了本repo中，大家可以直接在此查看[emoji](./emoji.md)。
 ---
 [dog]:https://raw.githubusercontent.com/bsky78/guide/master/img/20161201111356.jpg
+[zhihu]:https://www.zhihu.com/people/ "我的知乎"
+[weibo-logo]:./img/wb_logo.png "点击图片进入我的微博"
+[csdn-logo]:./img/csdn_logo.png "点击图片进入我的CSDN"
