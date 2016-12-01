@@ -154,8 +154,7 @@ https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif
 
 注意例2的写法使用了**URL标识符**的形式，在[链接](#链接)一节有介绍。
 >在文末有foryou的定义：
-
-```markdown
+```
 [dog]:https://raw.githubusercontent.com/bsky78/guide/master/img/20161201111356.jpg
 ```
 
@@ -165,7 +164,7 @@ https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif
 |---|----|-----
 |1|`[我的博客](http://www.cnblogs.com/abc1069/ "悬停显示")`|[我的博客](http://www.cnblogs.com/abc1069/ "悬停显示")
 |2|`[我的知乎][zhihu] `|[我的知乎][zhihu] 
-|2|`[zhihu]:https://www.zhihu.com/people/ "我的知乎，欢迎关注"`|
+|2|[zhihu]:https://www.zhihu.com/people/ "我的知乎，欢迎关注"|
 
 语法2由两部分组成：  
 - 第一部分使用两个中括号，[ ]里的标识符（本例中zhihu），可以是数字，字母等的组合，标识符上下对应就行了（**姑且称之为URL标识符**）  
