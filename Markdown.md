@@ -152,7 +152,7 @@ https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif
 |2|`![](./img/20161201110120.gif)`|![GitHub上的图片丢失了](./img/20161201110120.gif "我就是这么嘚瑟")
 |3|`![][dog]`|![][dog]
 
-注意例2的写法使用了**URL标识符**的形式，在[链接](#链接)一节有介绍。
+注意例3的写法使用了**URL标识符**的形式，在[链接](#链接)一节有介绍。
 >在文末有foryou的定义：
 ```
 [dog]:https://raw.githubusercontent.com/bsky78/guide/master/img/20161201111356.jpg
@@ -390,7 +390,8 @@ Github的Markdown语法支持添加emoji表情，输入不同的符号码（两�
 但是这个网页每次都打开**奇慢**......所以整理到了本系列中，大家可以直接在此查看[emoji](./emoji.md)。
 # 完
 > 说明：本系列转载于：[果冻虾仁](https://github.com/guodongxiaren/README/blob/master/README.md "果冻虾仁") 并重新排版修改，如原著敏感本系列，你TM来打我啊~
-> [![lalala]][]
+> 
+> [![lalala]][github]
 [dog]:https://raw.githubusercontent.com/bsky78/guide/master/img/20161201111356.jpg
 [zhihu]:https://www.zhihu.com/people/ "我的知乎"
 [weibo-logo]:./img/wb_logo.png "点击图片进入我的微博"
@@ -398,3 +399,4 @@ Github的Markdown语法支持添加emoji表情，输入不同的符号码（两�
 [csdn]:http://blog.csdn.net/ "我的博客"
 [baidu-logo]:http://www.baidu.com/img/bdlogo.gif "百度logo"
 [lalala]:./img/20161201110120.gif  "啦啦啦"
+[github]:https://github.com/bsky78/guide "bsky78"
