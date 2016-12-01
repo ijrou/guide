@@ -187,21 +187,22 @@ https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif
 |---|----|:---:
 |1|`[![weibo-logo]](http://weibo.com/3310352530/profile?is_all=1)`|[![weibo-logo]](http://weibo.com/3310352530/profile?is_all=1)
 |2|`[![](./img/logo6837e927.png "我的知乎")][zhihu]`|[![](./img/logo6837e927.png "我的知乎")][zhihu]
-|3|`[![csdn-logo]][http://www.csdn.net/]`|[![csdn-logo]][http://www.csdn.net/]
+|3|`[![csdn-logo]][csdn]` | [![csdn-logo]][csdn]  
+
 
 因为图片本身和链接本身都支持URL标识符的形式，所以图片链接也可以很简洁（见例3）。  
 注意，此时鼠标悬停时显示的文字是图片的title，而非链接本身的title了。
 >本文URL标识符都放置于文末
 
-###锚点
-其实呢，每一个标题都是一个锚点，和HTML的锚点（`#`）类似，比如我们 
+##锚点
+> 其实呢，每一个标题都是一个锚点，和HTML的锚点（`#`）类似，比如我们 
 
 |语法|效果|
 |---|---
 |`[回到顶部](#readme)`|[回到顶部](#readme)
 
-不过要注意，标题中的英文字母都被转化为**小写字母**了。
->以前GitHub对中文支持的不好，所以中文标题不能正确识别为锚点，但是现在已经没问题啦！
+不过要注意，标题中的英文字母都被转化为**小写字母**了。  
+*以前GitHub对中文支持的不好，所以中文标题不能正确识别为锚点，但是现在已经没问题啦！*
 
 
 ##列表
@@ -216,18 +217,27 @@ https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif
         * Python
 
 ###有序列表
-####一般效果
-就是在数字后面加一个点，再加一个空格。不过看起来起来可能不够明显。    
-面向对象的三个基本特征：
+#### 一般效果
+> 就是在数字后面加一个点，再加一个空格。不过看起来起来可能不够明显。  
 
+```  
+面向对象的三个基本特征：
+1. 封装
+2. 继承
+3. 多态
+```
+
+效果：  
+面向对象的三个基本特征：
 1. 封装
 2. 继承
 3. 多态
 
-####有序列表自动排序
-也可以在第一行指定`1. `，而接下来的几行用星号`*`（或者继续用数字1. ）就可以了，它会自动显示成2、3、4……。    
-面向对象的七大原则：
+#### 有序列表自动排序
+> 也可以在第一行指定`1. `，而接下来的几行用星号`*`（或者继续用数字1. ）就可以了，它会自动显示成2、3、4……
 
+```
+面向对象的七大原则：
 1. 开闭原则
 * 里氏转换原则
 * 依赖倒转原则
@@ -235,6 +245,16 @@ https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif
 * 组合/聚合复用原则
 * “迪米特”法则
 * 单一职责原则
+```  
+效果：  
+面向对象的七大原则：
+1. 开闭原则
+* 里氏转换原则
+* 依赖倒转原则
+* 接口隔离原则
+* 组合/聚合复用原则
+* “迪米特”法则
+* 单一职责原则  
 
 ####多级有序列表
 和无序列表一样，有序列表也有多级结构：  
@@ -340,4 +360,5 @@ Github的Markdown语法支持添加emoji表情，输入不同的符号码（两�
 [dog]:https://raw.githubusercontent.com/bsky78/guide/master/img/20161201111356.jpg
 [zhihu]:https://www.zhihu.com/people/ "我的知乎"
 [weibo-logo]:./img/wb_logo.png "点击图片进入我的微博"
-[csdn-logo]:./img/csdn_logo.png "点击图片进入我的CSDN"
+[csdn-logo]:/img/csdn_logo.png "我的CSDN博客"
+[csdn]:http://blog.csdn.net/ "我的博客"
