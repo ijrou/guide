@@ -150,44 +150,44 @@ https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif
 |---|---|---
 |1|`![baidu](http://www.baidu.com/img/bdlogo.gif "百度logo")`|![baidu](http://www.baidu.com/img/bdlogo.gif "百度logo")
 |2|`![](./img/20161201110120.gif)`|![GitHub上的图片丢失了](./img/20161201110120.gif "我就是这么嘚瑟")
-|3|`![][foryou]`|![][foryou]
+|3|`![][dog]`|![][dog]
 
 注意例2的写法使用了**URL标识符**的形式，在[链接](#链接)一节有介绍。
 >在文末有foryou的定义：
-```
-[foryou]:https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif
+
+```markdown
+[dog]:https://raw.githubusercontent.com/bsky78/guide/master/img/20161201111356.jpg
 ```
 
-链接
-------
-###链接外部URL
+## 链接
+#### 链接外部URL
 |#|语法|效果|
 |---|----|-----
-|1|`[我的博客](http://nding78.com/ "悬停显示")`|[我的博客](http://nding78.com/ "悬停显示")
+|1|`[我的博客](http://www.cnblogs.com/abc1069/ "悬停显示")`|[我的博客](http://www.cnblogs.com/abc1069/ "悬停显示")
 |2|`[我的知乎][zhihu] `|[我的知乎][zhihu] 
-|2|`[zhihu]:https://www.zhihu.com/people/ "我的知乎，欢迎关注"`|   
+|2|`[zhihu]:https://www.zhihu.com/people/ "我的知乎，欢迎关注"`|
 
-语法2由两部分组成：
-- 第一部分使用两个中括号，[ ]里的标识符（本例中zhihu），可以是数字，字母等的组合，标识符上下对应就行了（**姑且称之为URL标识符**）
+语法2由两部分组成：  
+- 第一部分使用两个中括号，[ ]里的标识符（本例中zhihu），可以是数字，字母等的组合，标识符上下对应就行了（**姑且称之为URL标识符**）  
 - 第二部分标记实际URL。
 
 >使用URL标识符能达到复用的目的，一般把全文所有的URL标识符统一放在文章末尾，这样看起来比较干净。
 >>URL标识符是我起的名字，不知道是否准确。囧。。
 
-###链接本仓库里的URL
-|语法|效果|
+####链接本仓库里的URL
+|语法|效果
 |----|-----
 |`[我的简介]|(/example/profile.md)`|[我的简介](/example/profile.md)
 |`[Book]|(./Book)`|[Book](/Book)
 
-###图片链接
-给图片加链接的本质是混合图片显示语法和普通的链接语法。普通的链接中[ ]内部是链接要显示的文本，而图片链接[ ]里面则是要显示的图片。  
-直接混合两种语法当然可以，但是十分啰嗦，为此我们可以使用URL标识符的形式。
+####图片链接
+> 给图片加链接的本质是混合图片显示语法和普通的链接语法。普通的链接中[ ]内部是链接要显示的文本，而图片链接[ ]里面则是要显示的图片。  
+> 直接混合两种语法当然可以，但是十分啰嗦，为此我们可以使用URL标识符的形式。
 
 |#|语法|效果|
 |---|----|:---:
 |1|`[![weibo-logo]](http://weibo.com/)`|[![weibo-logo]](http://weibo.com/)
-|2|`[![](/img/zhihu.png "我的知乎，欢迎关注")][zhihu]`|[![](/img/zhihu.png "我的知乎，欢迎关注")][zhihu]|
+|2|`[![](./img/logo.6837e927.png "我的知乎")][zhihu]`|[![](./img/logo.6837e927.png "我的知乎")][zhihu]|
 |3|`[![csdn-logo]][csdn]`|[![csdn-logo]][csdn]
 
 因为图片本身和链接本身都支持URL标识符的形式，所以图片链接也可以很简洁（见例3）。  
