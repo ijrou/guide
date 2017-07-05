@@ -52,7 +52,8 @@ $ git push origin master
 
 
 
-
+远程代码合并【注：pull=fetch+merge]
+$git pull --rebase origin master
 
 
 
