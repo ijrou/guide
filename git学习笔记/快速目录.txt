@@ -26,7 +26,7 @@ $ git log -- pretty=oneline
 回退上次版本库
 $ git reset --hard head^
 
-回退后重返下一版本库
+后悔药,也就是回退上一版本后又想返回下一版本库
 $ git reset --hard 版本号        版本号不一定写完
 
 git版本切换非常快 原理？
@@ -38,7 +38,7 @@ $ git reflog
 
 -----------------------------------工作区和暂存区
 工作区(Working Directory):包含.git文件夹的当前文件夹
-版本库：.git文件夹
+版本库(Repository)：.git文件夹
 暂存区stage(或index)：.git文件夹内某个文件夹
 主要分支(barnch)：master
 
@@ -62,7 +62,8 @@ $ git rm 文件名
 $ git rm -r 文件夹名
 $ git commit -m 'delete files'
 
-
+查看工作区和版本库里面最新版本的区别
+git diff HEAD -- 你的文件名
 
 
 
@@ -80,21 +81,35 @@ $ ssh-keygen -t rsa -C "youremail@example.com"
 
 在GitHub上添加一个repository,通过以下命令与GitHub的repository联系起来
 $ git remote add origin git@github.com:github上的账号名/github上的仓库名
+例如：
+$ git remote add origin git@github.com:izding/guid.git
 
-添加后，远程库的默认名字就是origin,也可以改
+添加后，远程库的默认名字就是origin,也可以改...
 
 把本地库所有内容推送到远程库上
 $ git push -u origin master
-本地->远程   push命令  即把当前master分支提交到远程master分支上
-第一次提交使用 -u 参数可以把本地master分支提交到远程master分支上，还会把本地的master分支和远程master分支关联起来，简化以后推送或拉取指令
+本地->远程   git push命令  即把当前master分支提交到远程master分支上
+第一次提交使用 -u 参数,该参数可以把本地master分支提交到远程master分支上，还会把本地的master分支和远程master分支关联起来，简化以后推送或拉取指令。
 
-
-现在，只要本地做了提交，就可以使用命令
+从现在起，只要本地做了提交，就可以使用命令
 $ git push origin master
 把本地master分支的最新修改推送至GitHub
 
+SSH警告提醒：
+第一次使用git的push或者clone命令连接github时会得到一个警告：
 
-第一次使用push或者clone命令时会得到一个警告
+The authenticity of host 'github.com (xx.xx.xx.xx)' can't be established.
+RSA key fingerprint is xx.xx.xx.xx.xx.
+Are you sure you want to continue connecting (yes/no)?
+
+这是因为Git使用SSH连接，而SSH连接在第一次验证GitHub服务器的Key时，需要你确认GitHub的Key的指纹信息是否真的来自GitHub的服务器，输入yes回车即可。
+
+Git会输出一个警告，告诉你已经把GitHub的Key添加到本机的一个信任列表里了：
+Warning: Permanently added 'github.com' (RSA) to the list of known hosts.
+这个警告只会出现一次，后面的操作就不会有任何警告了。
+
+如果你实在担心有人冒充GitHub服务器，输入yes前可以对照GitHub的RSA Key的指纹信息是否与SSH连接给出的一致。
+
 
 查看远程库的地址
 $ git remote -v
@@ -102,11 +117,6 @@ $ git remote -v
 
 克隆远程库到本地库上
 $ git clone git@github.com:github上的账号名/库名  [可选值,克隆到本地的目录]
-
-
-
-
-
 
 
 
