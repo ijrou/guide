@@ -20,6 +20,8 @@
 ```
 # 此为注释 – 将被 Git 忽略
 *.a       # 忽略所有 .a 结尾的文件
+dist      # 忽略dist目录
+Thumbs.db # 忽略 Thumbs.db 文件
 !lib.a    # 但 lib.a 除外
 /TODO     # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO
 build/    # 忽略 build/ 目录下的所有文件
@@ -36,4 +38,19 @@ git commit -m 'update .gitignore'
 
 
 推荐一个 ignore 自动生成网址 http://www.gitignore.io
+
+
+
+如果需要将某个已经忽略的文件强制添加到版本库中跟踪，则：
+
+```
+$ git add -f hello.class
+```
+
+如果觉得.gitignore 文件写得有问题，可以使用下面命令检查：
+
+```
+git check-ignore -v hello.class
+.gitignore:3:*.class   hello.class       告知道 .gitignore 的第3行规则忽略了该文件
+```
 
