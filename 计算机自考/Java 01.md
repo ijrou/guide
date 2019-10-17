@@ -28,7 +28,7 @@ J2ME：面向高性能移动计算的版本
 -   javap.exe  反编译器
 -   javadoc.exe 文档生成器
 
-源代码：.java    编译生成的二进制字节码：.class
+**源代码：.java    经过编译器编译生成的二进制字节码：.class**
 
 **一个java文件只能包含一个公开的类，但是可以有多个私有类；java文件名和公开的类名必须一致；**
 
@@ -50,7 +50,7 @@ OOP三大技术：封装、继承、多态；
 
 >   java中不能使用指针
 >
->   访问修饰符：private、protected、public、
+>   访问修饰符：private、protected、public
 
 
 
@@ -1845,11 +1845,21 @@ long length();
 
 ## AWT和Swing
 
-awt在是重量级组件，在包 java.awt中；
+awt在是**重量级**组件，在包 **java.awt**中；Button、Lable
 
-swing是轻量级组件，在包 javax.swing中；多数该包中的组件以J字母开头，比如JButton、JLable;
+swing是**轻量级**组件，在包 **javax.swing**中；多数该包中的组件以J字母开头，比如JButton、JLable;
 
 swing组件比awt拥有更加多的功能（比如lable控件，可以包含文本和图标），awt是比较落后的；
+
+Swing组件与AWT组件最大的不同是：**Swing组件在实现时不包含任何本地代码**，因此Swing组件可以不受硬件平台的限制；
+
+
+
+组件：按钮（JButton）、文本输入框（JTextField）、标签（JLabel）等
+
+容器：框架（Frame）、面板（Panel）等组件
+
+
 
 **组件** 是构成图形界面（GUI）的基本元素；
 
@@ -1869,7 +1879,15 @@ swing组件比awt拥有更加多的功能（比如lable控件，可以包含文�
 
 #### 顶层容器
 
-Java提供四种顶层容器：JFrame(常用，带标题和控制按钮)、JApplet(小窗口，在浏览器窗口中)、JDialog(对话框)、JWindow(少用，不带标题和控制按钮的窗口)
+Java提供四种顶层容器：
+
+-   JFrame(常用，带标题和控制按钮)
+
+-   JApplet(小窗口，在浏览器窗口中)
+
+-   JDialog(对话框)
+
+-   JWindow(少用，不带标题和控制按钮的窗口)
 
 JFrame类的构造方法：
 
@@ -1878,14 +1896,14 @@ JFrame类的构造方法：
 
 类方法：
 
--   void setBounds(int x, int y, int width, int height);          
+-   **void setBounds(int x, int y, int width, int height);**          
 -   **void setSize(int width, int height);**
 -   **void setBackground(Color bg);** 
 -   **void setVisible(boolean aFlag);           // 设置框架的可见性**
--   void pack();          // 调整框架大小，以适合其子组件的首选大小和布局
--   void setTitle(String title);
--   Container getContentPane();         // 返回此框架窗体的内容窗格对象
--   void setLayout(LayoutManager manager);         // 设置布局管理器
+-   **void pack();          // 调整框架大小，以适合其子组件的首选大小和布局**
+-   **void setTitle(String title);**
+-   **Container getContentPane();         // 返回此框架窗体的内容窗格对象**
+-   **void setLayout(LayoutManager manager);         // 设置布局管理器**
 
 ```java
 import javax.swing.*;
@@ -1920,7 +1938,7 @@ frame.getContentPane().add(button, BorderLayout.CENTER);
 方法二：创建一个内容窗格JPanel，替换到顶层容器的内容窗格；
 
 ```java
-JPanel contentPane = ne JPanel();
+JPanel contentPane = new JPanel();
 contentPane.setLayout(new BorderLayout());     // 创建布局管理器
 conentPane.add(button, BorderLayout.CENTER);       // 添加组件
 frame.setContentPane(contentPane);       // 用contentPane替换到顶层容器的内容窗格
@@ -1950,6 +1968,7 @@ public class C {
 	}
 }
 ```
+>   **顶层容器默认布局管理器为：BorderLayout； Jpanel默认布局管理器为：FlowLayout**
 
 >   向顶层容器的内容窗格中添加组件时，可以直接调用顶层容器的add()方法，这与调用内容窗格的add()方法是等价的
 
@@ -1959,16 +1978,19 @@ public class C {
 
 滚动面板：JScrollPane，只能添加一个组件
 
-面板不能独立存在，比如被添加到其他容器内，面板可以嵌套
+面板不能独立存在，必须被添加到其他容器内，面板可以嵌套
 
 ```java
 JFrame frame = new JFrame("sfs");
 Container fpane = frame.getContentPane();
 fpane.setBackground(Color.CYAN);
+
 JPanel panel = new JPanel();
 panel.setBackground(Color.RED);
+
 JButton btn = new JButton("gergeas");
 panel.add(btn);
+
 fpane.add(panel, BorderLayout.SOUTH);
 frame.setSize(600,500);
 frame.setVisible(true);
@@ -2017,7 +2039,7 @@ AbstractButton中定义了按钮所共有的一些方法，例如addActionListen
 
 `JButton btn = new JButton("我是按钮");`
 
-单击按钮时，事件处理系统将向按钮发送一个ActionEvent事件类对象，如果程序需要对此做出反应，则需要使用addActionListener()为按钮注册事件侦听程序并实现ActionListenner接口。
+单击按钮时，事件处理系统将向按钮发送一个**ActionEvent事件类**对象，如果程序需要对此做出反应，则需要使用**addActionListener()**为按钮注册事件侦听程序并实现**ActionListenner接口**。
 
 **public void addActionListener(ActionListener l)：为按钮添加事件侦听程序。**
 
@@ -2026,42 +2048,38 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class C extends WindowAdapter implements ActionListener{	
+public class p04_JButtonEvent extends WindowAdapter implements ActionListener {
 	public static void main(String[] args) {
-		C c = new C();
-		c.go();
-	}	
-	
-	JFrame	f;
-	JButton btn;
-	JTextField tf;
-	int tag = 0;
-	public void go() {
-		f = new JFrame("我");
-		btn = new JButton("我按钮啊");
-		btn.addActionListener(this);
-		f.getContentPane().add(btn, "South");
-		tf = new JTextField();
-		f.getContentPane().add(tf, "Center");
-		f.addWindowListener(this);
-		f.setSize(300, 200);
-		f.setVisible(true);
-		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		p04_JButtonEvent a = new p04_JButtonEvent();
+		a.go();
 	}
     
-	public void actionPerformed(ActionEvent e) {
-		String si = "fasd";
-		String s2 = "gregf";
-		if(tag == 0) {
-			tf.setText(si);
-			tag = 1;
-		}else {
-			tf.setText(s2);
-			tag = 0;
-		}
+	JFrame frame;
+	JButton btn;
+	JTextField jf;
+	public void go() {
+		frame = new JFrame("ss");
+		Container pane = frame.getContentPane();
+		
+		btn = new JButton("我");
+		btn.addActionListener(this);
+		pane.add(btn, BorderLayout.SOUTH);
+		
+		jf = new JTextField();
+		pane.add(jf, BorderLayout.CENTER);
+		
+
+		frame.addWindowListener(this);
+		frame.setVisible(true);
+		frame.setSize(300,200);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
-	
-	public void windowClosing(WindowEvent e) {
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		jf.setText("我是傻逼");
+	}
+	public void WindowClosing(WindowEvent e) {
 		System.exit(0);
 	}
 }
@@ -2356,7 +2374,7 @@ Java中，为了便于管理，系统将事件分类，称为**事件类型**。
 
 ```java
 int r=255,g=255,b=0;
-Color myColor=new Color（r，g，b）;
+Color myColor=new Color（r,g,b）;
 ```
 
 public void setForeground（Color c）：设置前景色。
