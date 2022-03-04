@@ -1,10 +1,11 @@
 # Markdown学习手册(GitHub)
 ***
-> 你当前进入的页面是教你如何书写Markdown语法的教程。
->
-> GitHub上的markdown语法在标准的markdown语法基础上做了扩充，称之为`GitHub Flavored Markdown`。简称`GFM`，GFM在GitHub上有广泛应用，除了README文件外，issues和wiki均支持markdown语法。
+你当前进入的页面是教你如何书写Markdown语法的教程。
 
+GitHub上的markdown语法在标准的markdown语法基础上做了扩充，称之为`GitHub Flavored Markdown`。简称`GFM`，GFM在GitHub上有广泛应用，除了README文件外，issues和wiki均支持markdown语法。
 
+<br>
+<br>
 
 # 目录
 
@@ -36,8 +37,10 @@
 * [代码高亮](#代码高亮)
 * [表格](#表格) 
 * [表情](#表情)
+* [diff语法](#diff语法)
 
-
+<br>
+<br>
 
 # 横线
 也叫水平分割线，使用`***`、`---`、`___`可以显示横线效果(注意:可以任意多个字符，但是不少于三个,如`********` , `-------------`)
@@ -46,7 +49,8 @@
 ---
 ___
 
-
+<br>
+<br>
 
 # 标题
 使用 `#` 符号表示，尽可能在符号后面加上一个空格，然后才输入标题文本  
@@ -59,7 +63,8 @@ ___
     ##### 五级标题
     ###### 六级标题
 
-效果：
+**效果**
+
 # 一级标题
 ## 二级标题
 ### 三级标题
@@ -67,7 +72,8 @@ ___
 ##### 五级标题
 ###### 六级标题
 
-
+<br>
+<br>
 
 # 文本
 
@@ -86,13 +92,13 @@ ___
 
 ### 文本块
 #### 语法1
-> 在连续几行的文本开头加入1个Tab或者4个空格。
+在连续几行的文本开头加入1个Tab或者4个空格。
 
 例如：
 
-​	欢迎到访
-​    很高兴见到您
-​    祝您，早上好，中午好，下午好，晚安
+​	欢迎到访  
+​    很高兴见到您  
+​    祝您，早上好，中午好，下午好，晚安  
 
 上面三句话前面都有空格
 
@@ -105,15 +111,13 @@ ___
 
 
 #### 语法2
-使用一对各三个的反引号：  
+使用一对各三个的反引号（**反引号就是键盘上Tab键上面那颗键**）  
 
-**反引号就是键盘上Tab键上面那颗键**
-
-\`\`\`
-欢迎到访
-我是C++码农
-你可以在知乎、CSDN、简书搜索找到我
-\`\`\`
+\`\`\`  
+欢迎到访  
+我是C++码农  
+你可以在知乎、CSDN、简书搜索找到我  
+\`\`\`  
 
 **效果**
 
@@ -125,7 +129,8 @@ ___
 
 该语法也可以实现代码高亮，见[代码高亮](#代码高亮)
 
-
+<br>
+<br>
 
 # 文字高亮
 文字高亮功能能使行内部分文字高亮，使用一对反引号。
@@ -139,7 +144,8 @@ ___
 
 也适合做一篇文章的tag
 
-
+<br>
+<br>
 
 # 换行
 直接回车不能换行  
@@ -155,7 +161,8 @@ ___
 
 也能实现换行效果，不过这个行间距有点大。
 
-
+<br>
+<br>
 
 # 斜体、粗体、删除线
 | 语法                  | 效果                |
@@ -172,7 +179,8 @@ ___
 
 > **注意 : 斜体、粗体、删除线可混合使用**
 
-
+<br>
+<br>
 
 # 图片
 基本格式：  
@@ -201,7 +209,8 @@ https://raw.githubusercontent.com/ijrou/guide/master/img/20161201111356.jpg
 [dog]:https://raw.githubusercontent.com/ijrou/guide/master/img/20161201111356.jpg
 ```
 
-
+<br>
+<br>
 
 # 链接
 ### 链接外部URL
@@ -218,10 +227,10 @@ https://raw.githubusercontent.com/ijrou/guide/master/img/20161201111356.jpg
 >>URL标识符是我起的名字，不知道是否准确。囧。。
 
 ### 链接本仓库里的URL
-| 语法                               |              效果               |
-| :--------------------------------- | :-----------------------------: |
-| `[我的简介]|(/example/profile.md)` | [我的简介](/example/profile.md) |
-| `[Book]|(./Book)`                  |        [Book](./Book)          |
+|语法|效果|
+|----|-----|
+|`[我的简介](/example/profile.md)`|[我的简介](/example/profile.md)|
+|`[book](./Book)`|[book](./Book)|
 
 ### 图片链接
 给图片加链接的本质是混合图片显示语法和普通的链接语法。普通的链接中[ ]内部是链接要显示的文本，而图片链接[ ]里面则是要显示的图片。  
@@ -229,9 +238,9 @@ https://raw.githubusercontent.com/ijrou/guide/master/img/20161201111356.jpg
 
 |  #   | 语法                                       |                    效果                    |
 | :--: | ---------------------------------------- | :--------------------------------------: |
-|  1   | `[![weibo-logo]](http://weibo.com/3310352530/profile?is_all=1)` | [![weibo-logo]](http://weibo.com/3310352530/profile?is_all=1) |
-|  2   | `[![](./img/logo6837e927.png "我的知乎")][zhihu]` | [![](./img/logo6837e927.png "我的知乎")][zhihu] |
-|  3   | `[![csdn-logo]][csdn]`                   |           [![csdn-logo]][csdn]           |
+|1|`[![weibo-logo]](http://weibo.com/3310352530/profile?is_all=1)`|[![weibo-logo]](http://weibo.com/3310352530/profile?is_all=1)|
+|2|`[![](./img/logo6837e927.png "我的知乎")][zhihu]`|[![](./img/logo6837e927.png "我的知乎")][zhihu]|
+|3|`[![csdn-logo]][csdn]`|[![csdn-logo]][csdn]|
 
 因为图片本身和链接本身都支持URL标识符的形式，所以图片链接也可以很简洁（见例3）。  
 注意，此时鼠标悬停时显示的文字是图片的title，而非链接本身的title了。
@@ -242,15 +251,16 @@ https://raw.githubusercontent.com/ijrou/guide/master/img/20161201111356.jpg
 
 > 其实呢，每一个标题都是一个锚点，和HTML的锚点（`#`）类似，比如我们 
 
-| 语法                                    | 效果                                  |
-| --------------------------------------- | ------------------------------------- |
-| `[回到顶部](#Markdown学习手册(GitHub))` | [回到顶部](#Markdown学习手册(GitHub)) |
+| 语法                                  | 效果                                |
+| ------------------------------------- | ----------------------------------- |
+| `[回到顶部](#markdown学习手册github)` | [回到顶部](#markdown学习手册github) |
 
 不过要注意，标题中的英文字母都被转化为**小写字母**了。  
 
 > 以前GitHub对中文支持的不好，所以中文标题不能正确识别为锚点，但是现在已经没问题啦！
 
-
+<br>
+<br>
 
 # 列表
 ### 无序列表
@@ -383,7 +393,8 @@ https://raw.githubusercontent.com/ijrou/guide/master/img/20161201111356.jpg
 >>>>平衡二叉树
 >>>>>满二叉树
 
-
+<br>
+<br>
 
 # 代码高亮  
 
@@ -393,8 +404,8 @@ https://raw.githubusercontent.com/ijrou/guide/master/img/20161201111356.jpg
 
  
 
-\`\`\`javascript
-document.getElementById("myH1").innerHTML="Welcome to my Homepage";    //javascipt
+\`\`\`javascript  
+document.getElementById("myH1").innerHTML="Welcome to my Homepage";    //javascipt  
 \`\`\`  
 
 
@@ -420,7 +431,8 @@ echo "hello GitHub"  #Bash
 string &operator+(const string& A,const string& B)   //cpp
 ```
 
-
+<br>
+<br>
 
 # 表格
 ### 写法一：  
@@ -475,7 +487,8 @@ string &operator+(const string& A,const string& B)   //cpp
 | :------------------: | :--: |
 | ![baidu][baidu-logo] |  百度  |
 
-
+<br>
+<br>
 
 # 表情
 Github的Markdown语法支持添加emoji表情，输入不同的符号码（两个冒号包围的字符）可以显示出不同的表情。
@@ -488,6 +501,8 @@ Github的Markdown语法支持添加emoji表情，输入不同的符号码（两�
 
 <br>
 <br>
+
+
 # diff语法
 版本控制的系统中都少不了diff的功能，即展示一个文件内容的增加与删除。
 GFM中可以显示的展示diff效果。使用绿色表示新增，红色表示删除。
@@ -498,12 +513,12 @@ GFM中可以显示的展示diff效果。使用绿色表示新增，红色表示�
 并且其内容中，可以用 `+ `开头表示新增，`- `开头表示删除。
 另外还有有 `!`和`#`的语法。
 
-\`\`\`diff
-\+ 人闲桂花落，
-\- 夜静春山空。
-! 月出惊山鸟，
-\# 时鸣春涧中。
-\`\`\`
+    ```diff
+    + 人闲桂花落，
+    - 夜静春山空。
+    ! 月出惊山鸟，
+    # 时鸣春涧中。
+    ```
 
 **效果**
 
